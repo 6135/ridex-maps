@@ -1,0 +1,14 @@
+# Regions built every month (RideX ARCHITECTURE §9.9). `area` is the Geofabrik extract Planetiler
+# downloads; `geofabrik` is its path on download.geofabrik.de, used to read the OSM data date.
+# `bbox` is [minLon, minLat, maxLon, maxLat], used by the app to pick the region for the map view.
+regions:
+  - id: portugal
+    name: Portugal
+    area: portugal
+    geofabrik: europe/portugal
+    bbox: [-31.6, 29.8, -6.1, 42.2]
+  - id: spain
+    name: Spain
+    area: spain
+    geofabrik: europe/spain
+    bbox: [-18.5, 27.4, 4.6, 44.0]
