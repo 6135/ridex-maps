@@ -6,9 +6,19 @@ Each region needs dist/<id>.pmtiles and dist/<id>.osmdate (YYYY-MM-DD).
 import hashlib
 import json
 import os
+import struct
 import sys
 
 import yaml
+
+
+
+def header_bbox(path):
+    # PMTiles v3 header: min/max lon/lat as int32 * 1e7 at byte 110.
+    with open(path, "rb") as f:
+        head = f.read(127)
+    return [round(v / 1e7, 4) for v in struct.unpack_from("<4i", head, 110)]
+
 
 regions_file, dist, tag, repo = sys.argv[1:5]
 regions = yaml.safe_load(open(regions_file, encoding="utf-8"))["regions"]
@@ -28,7 +38,7 @@ for r in regions:
     entries.append({
         "id": r["id"],
         "name": r["name"],
-        "bbox": r["bbox"],
+        "bbox": r.get("bbox") or header_bbox(os.path.join(dist, name)),
         "osmDate": osm_date,
         "sizeBytes": os.path.getsize(os.path.join(dist, name)),
         "sha256": sha.hexdigest(),

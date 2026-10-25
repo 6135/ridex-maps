@@ -1,6 +1,7 @@
 # Regions built every month (RideX ARCHITECTURE §9.9). `area` is the Geofabrik extract Planetiler
 # downloads; `geofabrik` is its path on download.geofabrik.de, used to read the OSM data date.
 # `bbox` is [minLon, minLat, maxLon, maxLat], used by the app to pick the region for the map view.
+# It is optional: without it, catalog.py reads the bounds from the .pmtiles header.
 regions:
   - id: portugal
     name: Portugal
@@ -12,3 +13,220 @@ regions:
     area: spain
     geofabrik: europe/spain
     bbox: [-18.5, 27.4, 4.6, 44.0]
+  - id: andorra
+    name: Andorra
+    area: andorra
+    geofabrik: europe/andorra
+  - id: morocco
+    name: Morocco
+    area: morocco
+    geofabrik: africa/morocco
+  - id: ireland
+    name: Ireland and Northern Ireland
+    area: ireland-and-northern-ireland
+    geofabrik: europe/ireland-and-northern-ireland
+  - id: netherlands
+    name: Netherlands
+    area: netherlands
+    geofabrik: europe/netherlands
+  - id: belgium
+    name: Belgium
+    area: belgium
+    geofabrik: europe/belgium
+  - id: switzerland
+    name: Switzerland
+    area: switzerland
+    geofabrik: europe/switzerland
+  - id: austria
+    name: Austria
+    area: austria
+    geofabrik: europe/austria
+  # Large countries are split into Geofabrik sub-regions: a whole country would exceed the
+  # 2 GiB release asset limit or the runner disk. Mainland France only (no overseas regions).
+  - id: france-alsace
+    name: Alsace
+    area: alsace
+    geofabrik: europe/france/alsace
+  - id: france-aquitaine
+    name: Aquitaine
+    area: aquitaine
+    geofabrik: europe/france/aquitaine
+  - id: france-auvergne
+    name: Auvergne
+    area: auvergne
+    geofabrik: europe/france/auvergne
+  - id: france-basse-normandie
+    name: Lower Normandy
+    area: basse-normandie
+    geofabrik: europe/france/basse-normandie
+  - id: france-bourgogne
+    name: Burgundy
+    area: bourgogne
+    geofabrik: europe/france/bourgogne
+  - id: france-bretagne
+    name: Brittany
+    area: bretagne
+    geofabrik: europe/france/bretagne
+  - id: france-centre
+    name: Centre-Val de Loire
+    area: centre
+    geofabrik: europe/france/centre
+  - id: france-champagne-ardenne
+    name: Champagne-Ardenne
+    area: champagne-ardenne
+    geofabrik: europe/france/champagne-ardenne
+  - id: france-corse
+    name: Corsica
+    area: corse
+    geofabrik: europe/france/corse
+  - id: france-franche-comte
+    name: Franche-Comté
+    area: franche-comte
+    geofabrik: europe/france/franche-comte
+  - id: france-haute-normandie
+    name: Upper Normandy
+    area: haute-normandie
+    geofabrik: europe/france/haute-normandie
+  - id: france-ile-de-france
+    name: Île-de-France
+    area: ile-de-france
+    geofabrik: europe/france/ile-de-france
+  - id: france-languedoc-roussillon
+    name: Languedoc-Roussillon
+    area: languedoc-roussillon
+    geofabrik: europe/france/languedoc-roussillon
+  - id: france-limousin
+    name: Limousin
+    area: limousin
+    geofabrik: europe/france/limousin
+  - id: france-lorraine
+    name: Lorraine
+    area: lorraine
+    geofabrik: europe/france/lorraine
+  - id: france-midi-pyrenees
+    name: Midi-Pyrénées
+    area: midi-pyrenees
+    geofabrik: europe/france/midi-pyrenees
+  - id: france-nord-pas-de-calais
+    name: Nord-Pas-de-Calais
+    area: nord-pas-de-calais
+    geofabrik: europe/france/nord-pas-de-calais
+  - id: france-pays-de-la-loire
+    name: Pays de la Loire
+    area: pays-de-la-loire
+    geofabrik: europe/france/pays-de-la-loire
+  - id: france-picardie
+    name: Picardy
+    area: picardie
+    geofabrik: europe/france/picardie
+  - id: france-poitou-charentes
+    name: Poitou-Charentes
+    area: poitou-charentes
+    geofabrik: europe/france/poitou-charentes
+  - id: france-provence-alpes-cote-d-azur
+    name: Provence-Alpes-Côte d'Azur
+    area: provence-alpes-cote-d-azur
+    geofabrik: europe/france/provence-alpes-cote-d-azur
+  - id: france-rhone-alpes
+    name: Rhône-Alpes
+    area: rhone-alpes
+    geofabrik: europe/france/rhone-alpes
+  # Germany
+  - id: germany-baden-wuerttemberg
+    name: Baden-Württemberg
+    area: baden-wuerttemberg
+    geofabrik: europe/germany/baden-wuerttemberg
+  - id: germany-bayern
+    name: Bavaria
+    area: bayern
+    geofabrik: europe/germany/bayern
+  - id: germany-berlin
+    name: Berlin
+    area: berlin
+    geofabrik: europe/germany/berlin
+  - id: germany-brandenburg
+    name: Brandenburg
+    area: brandenburg
+    geofabrik: europe/germany/brandenburg
+  - id: germany-bremen
+    name: Bremen
+    area: bremen
+    geofabrik: europe/germany/bremen
+  - id: germany-hamburg
+    name: Hamburg
+    area: hamburg
+    geofabrik: europe/germany/hamburg
+  - id: germany-hessen
+    name: Hesse
+    area: hessen
+    geofabrik: europe/germany/hessen
+  - id: germany-mecklenburg-vorpommern
+    name: Mecklenburg-Vorpommern
+    area: mecklenburg-vorpommern
+    geofabrik: europe/germany/mecklenburg-vorpommern
+  - id: germany-niedersachsen
+    name: Lower Saxony
+    area: niedersachsen
+    geofabrik: europe/germany/niedersachsen
+  - id: germany-nordrhein-westfalen
+    name: North Rhine-Westphalia
+    area: nordrhein-westfalen
+    geofabrik: europe/germany/nordrhein-westfalen
+  - id: germany-rheinland-pfalz
+    name: Rhineland-Palatinate
+    area: rheinland-pfalz
+    geofabrik: europe/germany/rheinland-pfalz
+  - id: germany-saarland
+    name: Saarland
+    area: saarland
+    geofabrik: europe/germany/saarland
+  - id: germany-sachsen
+    name: Saxony
+    area: sachsen
+    geofabrik: europe/germany/sachsen
+  - id: germany-sachsen-anhalt
+    name: Saxony-Anhalt
+    area: sachsen-anhalt
+    geofabrik: europe/germany/sachsen-anhalt
+  - id: germany-schleswig-holstein
+    name: Schleswig-Holstein
+    area: schleswig-holstein
+    geofabrik: europe/germany/schleswig-holstein
+  - id: germany-thueringen
+    name: Thuringia
+    area: thueringen
+    geofabrik: europe/germany/thueringen
+  # Italy
+  - id: italy-nord-ovest
+    name: Italy North-West
+    area: nord-ovest
+    geofabrik: europe/italy/nord-ovest
+  - id: italy-nord-est
+    name: Italy North-East
+    area: nord-est
+    geofabrik: europe/italy/nord-est
+  - id: italy-centro
+    name: Italy Centre
+    area: centro
+    geofabrik: europe/italy/centro
+  - id: italy-sud
+    name: Italy South
+    area: sud
+    geofabrik: europe/italy/sud
+  - id: italy-isole
+    name: Sicily and Sardinia
+    area: isole
+    geofabrik: europe/italy/isole
+  # Great Britain
+  - id: gb-england
+    name: England
+    area: england
+    geofabrik: europe/great-britain/england
+  - id: gb-scotland
+    name: Scotland
+    area: scotland
+    geofabrik: europe/great-britain/scotland
+  - id: gb-wales
+    name: Wales
+    area: wales
+    geofabrik: europe/great-britain/wales
