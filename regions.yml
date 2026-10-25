@@ -13,16 +13,6 @@ regions:
     area: spain
     geofabrik: europe/spain
     bbox: [-18.5, 27.4, 4.6, 44.0]
-  # Island regions: also inside portugal/spain, but a much smaller download for island riders.
-  # Geofabrik has no separate Madeira or Balearic Islands extract.
-  - id: azores
-    name: Azores
-    area: azores
-    geofabrik: europe/azores
-  - id: canary-islands
-    name: Canary Islands
-    area: canary-islands
-    geofabrik: africa/canary-islands
   - id: andorra
     name: Andorra
     area: andorra
