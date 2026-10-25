@@ -70,8 +70,9 @@ jobs:
           curl -fsSL -o planetiler.jar "https://github.com/onthegomap/planetiler/releases/download/v${PLANETILER_VERSION}/planetiler.jar"
           rm -f data/sources/*.osm.pbf
           java -Xmx10g -jar planetiler.jar --download --area=${{ steps.region.outputs.area }} \
-            --output=dist/${{ matrix.region }}.pmtiles --maxzoom=14 --storage=mmap --nodemap-type=array \
+            --output=dist/${{ matrix.region }}.pmtiles --maxzoom=14 --storage=mmap --nodemap-type=sparsearray \
             --force
+          df -h /
           rm -f data/sources/*.osm.pbf
 
       - name: OSM data date
