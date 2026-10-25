@@ -4,7 +4,7 @@ Offline region maps for the [RideX](https://github.com/6135/Moto-Ride-X) motorcy
 
 Every month a GitHub Actions workflow downloads OpenStreetMap extracts from Geofabrik, turns them into vector tiles with [Planetiler](https://github.com/onthegomap/planetiler) (OpenMapTiles schema, max zoom 14), and publishes one `.pmtiles` file per region plus a `catalog.json` as a release (`maps-YYYY-MM`). The app reads `releases/latest/download/catalog.json`.
 
-- Regions: [regions.yml](regions.yml) (Portugal, Spain, Azores, Canary Islands, Andorra, Morocco, Italy, Great Britain, Ireland, Netherlands, Belgium, Switzerland, Austria).
+- Regions: [regions.yml](regions.yml) (Portugal, Spain, islands, smaller countries, and France, Germany, Italy, Great Britain as sub-regions).
 - Workflow: [.github/workflows/build-regions.yml](.github/workflows/build-regions.yml), monthly and on demand.
 - The last 2 releases are kept.
 

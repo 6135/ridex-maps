@@ -34,7 +34,8 @@ jobs:
     timeout-minutes: 180
     strategy:
       fail-fast: false
-      max-parallel: 1
+      # Each region runs on its own runner; fail-fast off, so one failed region does not stop the others.
+      max-parallel: 10
       matrix:
         region: ${{ fromJson(needs.regions.outputs.ids) }}
     steps:
